@@ -6,6 +6,10 @@ jobs:
     steps:
       - name: code checkout
         uses: actions/checkout@v4 
+        with:
+         ref: testing
+      - name: Checking the Git Branch
+        run: git status
       - name: version check
         run: terraform -version
       - name: init
